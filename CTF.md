@@ -19,7 +19,7 @@ Capture The Flag (CTF) competitions are a great way to:
 
 ##CTF 101
 
-- **Preparation for CTFs **
+- **Preparation for CTFs**
 
  - Learn how to use your tools well and do some research beforehand in the area you want to focus on. This will allow you to get the most out of the competition, since most are limited to 24 or 48 hours in duration.
 
@@ -47,7 +47,7 @@ These are the competitions I will be participating in until the end of this year
 
 | Name | Date | Format|
 |--------|--------|--------|
-|  [WhiteHat Contest 2015](https://wargame.whitehat.vn/)      |   25 July 2015, 02:00 UTC — 25 July 2015 14:00 UTC	| Jeopardy |
+|[WhiteHat Contest 2015](https://wargame.whitehat.vn/)      |   25 July 2015, 02:00 UTC — 25 July 2015 14:00 UTC	| Jeopardy |
 |[STEM CTF: Cyber Challenge 2015](http://mitrecyberacademy.org/competitions/index.html)| 11 Sept. 2015, 19:00 UTC — 12 Sept. 2015, 23:00 UTC | Jeopardy |
 |[CSAW CTF Qualification Round 2015](https://ctf.isis.poly.edu/) | 18 Sept. 2015, 22:00 UTC — 20 Sept. 2015, 22:00 UTC| Jeopardy |
 
