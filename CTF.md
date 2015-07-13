@@ -44,12 +44,12 @@ Capture The Flag (CTF) competitions are a great way to:
 These are the competitions I will be participating in until the end of this year. Currently I keep an eye on [CTFTime](https://ctftime.org/event/list/upcoming) for upcoming CTF challenges. I will also be focusing on posting my writeups after each challenge. I try to make my writeups fairly comprehensive so that even a beginner could learn from them, however feel free to drop me an email if you want to find out more about how I solved a challenge.
 
 
-
-| Name | Date | Format|
-|--------|--------|--------|
-|[WhiteHat Contest 2015](https://wargame.whitehat.vn/)      |   25 July 2015, 02:00 UTC — 25 July 2015 14:00 UTC	| Jeopardy |
-|[STEM CTF: Cyber Challenge 2015](http://mitrecyberacademy.org/competitions/index.html)| 11 Sept. 2015, 19:00 UTC — 12 Sept. 2015, 23:00 UTC | Jeopardy |
-|[CSAW CTF Qualification Round 2015](https://ctf.isis.poly.edu/) | 18 Sept. 2015, 22:00 UTC — 20 Sept. 2015, 22:00 UTC| Jeopardy |
+- [WhiteHat Contest 2015](https://wargame.whitehat.vn/)
+ - 25 July 2015, 02:00 UTC — 25 July 2015 14:00 UTC	 Jeopardy
+- [STEM CTF: Cyber Challenge 2015](http://mitrecyberacademy.org/competitions/index.html) 
+ - 11 Sept. 2015, 19:00 UTC — 12 Sept.  - 2015, 23:00 UTC Jeopardy
+- [CSAW CTF Qualification Round 2015](https://ctf.isis.poly.edu/) 
+ - 18 Sept. 2015, 22:00 UTC — 20 Sept. 2015, 22:00 UTC Jeopardy
 
 ###Completed Competitions
 
