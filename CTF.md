@@ -37,7 +37,7 @@ Capture The Flag (CTF) competitions are a great way to:
 
 
 
-###Upcoming Competitions in 2015
+##Upcoming Competitions in 2015
 
 
 
@@ -51,6 +51,6 @@ These are the competitions I will be participating in until the end of this year
 - [CSAW CTF Qualification Round 2015](https://ctf.isis.poly.edu/) 
  - 18 Sept. 2015, 22:00 UTC — 20 Sept. 2015, 22:00 UTC Jeopardy
 
-###Completed Competitions
+##Completed Competitions
 
 - [PoliCTF 2015](http://polictf.it/)
