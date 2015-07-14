@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Poli CTF 2015"
-published: false
+published: true
 ---
 
 #Poli CTF 2015
