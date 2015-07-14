@@ -4,8 +4,6 @@ title: "Poli CTF 2015"
 published: true
 ---
 
-#Poli CTF 2015
-
 PoliCTF is a 48 hour, jeopardy style capture-the-flag competition that will be held both online and live for a restricted number of participants attending the DIMVA 2015 conference held in Milan (Italy). This is the first time I have competed in this CTF, and i'd like to say thank you to the team who put these challenges together!
 
 This is the first CTF I have done in quite a while, so suffice to say I am currently out of practice and overthought many of the challenges. However I still had heaps of fun, and i'm looking forward to practicing for the next CTF!
