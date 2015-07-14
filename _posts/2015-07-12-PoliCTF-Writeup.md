@@ -60,7 +60,7 @@ fish@sword:~$
 : command not found
 fish@sword:~$ 
 ```
-The browser's HTTP request being entered as commands is a fairly good indication that we need something more appropriate to access this system. [Netcat](https://en.wikipedia.org/wiki/Netcat) would handle connecting to port 80.
+The browser's HTTP request being entered as commands is a fairly good indication that we need something more appropriate to access this system. [Netcat](https://en.wikipedia.org/wiki/Netcat) would handle connecting to port 80 nicely.
 ```
 nc interview.polictf.it 80
 ```
