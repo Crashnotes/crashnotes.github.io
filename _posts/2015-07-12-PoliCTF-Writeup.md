@@ -19,7 +19,7 @@ http://polictf.it/
 
 ####Hard Interview - 50 Points
 
-This challenge was a great lesson in learning about not overthinking easy challenges!
+This challenge was a great lesson in learning about not overthinking easy challenges and knowing your cheesy hacker movies.
 
 So we start off with this:
 >**interview.polictf.it:80**
