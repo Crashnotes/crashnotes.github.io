@@ -8,15 +8,9 @@ published: false
 
 PoliCTF is a 48 hour, jeopardy style capture-the-flag competition that will be held both online and open to all competitors and live for a restricted number of participants. The competition will start during the second day of the DIMVA 2015 conference that will be held in Milan (Italy). This is the first time I have competed in this CTF. Thank you to the team who put these challenges together!
 
-Of the challenges listed, What did I manage to achieve?
-
-What challenges was I planning to focus on and what would I like to try my hand at in the future?
-- Overall enjoyment & learning from this CTF?
-- 
-
+This is the first CTF I have done in quite a while, so suffice to say I am currently out of practice and overthought many of the challenges. However I still had heaps of fun, and i'm looking forward to practicing for the next CTF!
 
 http://polictf.it/
-
 
 ##Challenge Writeups
 
