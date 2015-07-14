@@ -94,12 +94,12 @@ useage:  ssh username@address
 address: a not so easily reachable IP address
 Very simple...isn't it?
 ```
-If you haven't picked it up already, this challenge is based around the interview scene in the movie [Swordfish](https://en.wikipedia.org/wiki/Swordfish_(film)) . I brought up a video of the [interview scene](https://www.youtube.com/watch?v=zfy5dFhw3ik) on YouTube and watched it. After alot of pausing and squinting, I realised that there is an IP address that looks fairly out of place, and a frame that stood out to me.
+If you haven't picked it up already, this challenge is based around the interview scene in the movie [Swordfish](https://en.wikipedia.org/wiki/Swordfish_(film)) . I brought up a video of the [interview scene](https://www.youtube.com/watch?v=zfy5dFhw3ik) on YouTube and watched it. After alot of pausing and squinting, I realised that there is an IP address that looks fairly out of place, and I entered the typical username I would expect we were trying to access...
 ```
 fish@sword:~$ ssh admin@312.5.125.233
  flag{H4ll3_B3rry's_t0pl3ss_sc3n3_w4s_4ls0_n0t4bl3}
 ```
-Success!
+And Success!
 ---
 
 ###Pwnable
